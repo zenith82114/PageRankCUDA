@@ -5,6 +5,16 @@ Parallel and Optimized PageRank with CUDA
 
 Done as a class project in *M3239.005400 Computing for Data Science 2, Fall 2025*
 
+## Environment
+- Intel Xeon Gold 6342, NVIDIA GeForce RTX 3090
+- CUDA 13.0, `cugraph-cu13=25.10.1`, Python 3.12.3
+
+## Results
+
+<p align="center">
+    <img src="assets/result.png" alt="Results" width="800">
+</p>
+
 ## Setup
 
 ```sh
