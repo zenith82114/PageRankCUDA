@@ -1,4 +1,4 @@
-./bin
-./data
-./out
-./test
+/bin/
+/data/
+/out/
+/test/
