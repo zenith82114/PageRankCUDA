@@ -17,13 +17,20 @@ Done as a class project in *M3239.005400 Computing for Data Science 2, Fall 2025
 
 ## Setup
 
+Install cuGraph
 ```sh
 pip install cugraph-cu13 --extra-index-url=https://pypi.nvidia.com
+```
 
+Clone the repository
+```sh
 git clone https://github.com/zenith82114/PageRankCUDA.git
 cd PageRankCUDA
-mkdir data test
+```
 
+Prepare data
+```sh
+mkdir data
 cd data
 wget https://snap.stanford.edu/data/congress_network.zip \
     https://snap.stanford.edu/data/facebook_combined.txt.gz \
@@ -33,10 +40,28 @@ wget https://snap.stanford.edu/data/congress_network.zip \
 unzip congress_network.zip
 gzip -d *.txt.gz
 cd ..
+```
 
+Preprocess data (this removes headers and sets vertex indexing to 0-based)
+```sh
+mkdir test
 python preprocess.py
+```
 
+Compile binaries (`out/` directory will be generated)
+```sh
 make
+```
 
+Run programs
+```sh
 ./run.sh congress_network
+```
+
+For `./run.sh [GRAPH]` you need to have `test/[GRAPH].in` which is in the following format:
+```
+N M
+u[0] v[0]
+...
+u[M-1] v[M-1]
 ```
